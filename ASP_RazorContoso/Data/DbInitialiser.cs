@@ -18,7 +18,7 @@ namespace ASP_RazorContoso.Data
 
             var students = new Student[]
             {
-                new Student{FirstName="Ruairi Hawes",LastName="Hawes",EnrollmentDate=DateTime.Parse("2019-09-01")},
+                new Student{FirstName="Ruairi",LastName="Hawes",EnrollmentDate=DateTime.Parse("2019-09-01")},
                 new Student{FirstName="Millie",LastName="Storey",EnrollmentDate=DateTime.Parse("2017-09-01")},
                 new Student{FirstName="Carys",LastName="Brock",EnrollmentDate=DateTime.Parse("2018-09-01")},
                 new Student{FirstName="Priyanka",LastName="Parkes",EnrollmentDate=DateTime.Parse("2017-09-01")},
