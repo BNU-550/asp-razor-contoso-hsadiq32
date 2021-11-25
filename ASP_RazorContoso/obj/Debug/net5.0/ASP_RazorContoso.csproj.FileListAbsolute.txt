@@ -162,3 +162,4 @@ C:\Users\Haroon\Documents\GitHub\asp-razor-contoso-hsadiq32\ASP_RazorContoso\obj
 C:\Users\Haroon\Documents\GitHub\asp-razor-contoso-hsadiq32\ASP_RazorContoso\obj\Debug\net5.0\Razor\Pages\Students\Details.cshtml.g.cs
 C:\Users\Haroon\Documents\GitHub\asp-razor-contoso-hsadiq32\ASP_RazorContoso\obj\Debug\net5.0\Razor\Pages\Students\Edit.cshtml.g.cs
 C:\Users\Haroon\Documents\GitHub\asp-razor-contoso-hsadiq32\ASP_RazorContoso\obj\Debug\net5.0\Razor\Pages\Students\Index.cshtml.g.cs
+C:\Users\Haroon\Documents\GitHub\asp-razor-contoso-hsadiq32\ASP_RazorContoso\obj\Debug\net5.0\Razor\Pages\About.cshtml.g.cs
