@@ -10,6 +10,13 @@ namespace ASP_RazorContoso.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
+            AddStudents(context);
+            AddCourses(context);
+            AddEnrolments(context);
+        }
+
+        private static void AddStudents(ApplicationDbContext context)
+        {
             // Look for any students.
             if (context.Students.Any())
             {
@@ -30,35 +37,103 @@ namespace ASP_RazorContoso.Data
 
             context.Students.AddRange(students);
             context.SaveChanges();
+        }
+
+        private static void AddCourses(ApplicationDbContext context)
+        {
+            // Looks for modules
+            if (context.Modules.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+            Module co550 = new Module
+            {
+                ModuleID = "CO550",
+                Title = "Web Applications"
+            };
+
+            Module co551 = new Module
+            {
+                ModuleID = "CO551",
+                Title = "Open Source Systems"
+            };
+
+            Module co558 = new Module
+            {
+                ModuleID = "CO558",
+                Title = "Database Design"
+            };
+            context.SaveChanges(true);
+
+            Module co557 = new Module
+            {
+                ModuleID = "CO557",
+                Title = "Software Engineering"
+            };
+
+            Module co567 = new Module
+            {
+                ModuleID = "CO567",
+                Title = "Object-oriented Systems Development"
+            };
+
+            Module co556 = new Module
+            {
+                ModuleID = "CO556",
+                Title = "Network Systems"
+            };
+
+            // Look for courses
+            if (context.Courses.Any())
+            {
+                return;   // DB has been seeded
+            }
 
             var courses = new Course[]
             {
-                new Course{CourseID=558,Title="Database Design-21S1",Credits=3},
-                new Course{CourseID=566,Title="Mobile Systems-21S2",Credits=3},
-                new Course{CourseID=556,Title="Network Systems-21S1",Credits=3},
-                new Course{CourseID=567,Title="Object Oriented Systems Development-21S1",Credits=4},
-                new Course{CourseID=551,Title="Open Source Systems-21S2",Credits=4},
-                new Course{CourseID=557,Title="Software Engineering-21S2",Credits=3},
-                new Course{CourseID=550,Title="Web Applications-21S1",Credits=4}
+                new Course
+                {
+                    CourseID = "55900",
+                    Title = "Computing",
+                    Modules = new List<Module>{ co550, co556, co558, co567, co557, co551 }
+                },
+
+            new Course{CourseID="55580",Title="Graphic Design"},
+            new Course{CourseID="55660",Title="Art"},
+            new Course{CourseID="55560",Title="3D CAD"},
+            new Course{CourseID="55670",Title="Cyber Security"},
+            new Course{CourseID="55510",Title="Game Devlopment"},
+            new Course{CourseID="55570",Title="Engineering"},
+            new Course{CourseID="55500",Title="Nursing"}
             };
 
             context.Courses.AddRange(courses);
             context.SaveChanges();
+        }
+
+        private static void AddEnrolments(ApplicationDbContext context)
+        {
+            // Look for any enrollments.
+            if (context.Enrollments.Any())
+            {
+                return;   // DB has been seeded
+            }
 
             var enrollments = new Enrollment[]
             {
-                new Enrollment{StudentID=1,CourseID=558,Grade=Grades.A},
-                new Enrollment{StudentID=1,CourseID=566,Grade=Grades.C},
-                new Enrollment{StudentID=1,CourseID=556,Grade=Grades.B},
-                new Enrollment{StudentID=2,CourseID=567,Grade=Grades.B},
-                new Enrollment{StudentID=2,CourseID=551,Grade=Grades.F},
-                new Enrollment{StudentID=2,CourseID=557,Grade=Grades.F},
-                new Enrollment{StudentID=3,CourseID=558},
-                new Enrollment{StudentID=4,CourseID=558},
-                new Enrollment{StudentID=4,CourseID=566,Grade=Grades.F},
-                new Enrollment{StudentID=5,CourseID=556,Grade=Grades.C},
-                new Enrollment{StudentID=6,CourseID=567},
-                new Enrollment{StudentID=7,CourseID=551,Grade=Grades.A},
+            new Enrollment{StudentID=1,CourseID=55580,Grade=Grades.A},
+            new Enrollment{StudentID=1,CourseID=55660,Grade=Grades.C},
+            new Enrollment{StudentID=1,CourseID=55560,Grade=Grades.B},
+            new Enrollment{StudentID=2,CourseID=55670,Grade=Grades.B},
+            new Enrollment{StudentID=2,CourseID=55510,Grade=Grades.F},
+            new Enrollment{StudentID=2,CourseID=55570,Grade=Grades.F},
+            new Enrollment{StudentID=3,CourseID=55580},
+            new Enrollment{StudentID=4,CourseID=55580},
+            new Enrollment{StudentID=4,CourseID=55660,Grade=Grades.F},
+            new Enrollment{StudentID=5,CourseID=55560,Grade=Grades.C},
+            new Enrollment{StudentID=6,CourseID=55670},
+            new Enrollment{StudentID=7,CourseID=55510,Grade=Grades.A},
             };
 
             context.Enrollments.AddRange(enrollments);

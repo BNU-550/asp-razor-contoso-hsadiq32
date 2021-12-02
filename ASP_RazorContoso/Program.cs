@@ -17,7 +17,7 @@ namespace ASP_RazorContoso
         {
             var host = CreateHostBuilder(args).Build();
 
-            CreateDbIfNotExists(host);
+            //CreateDbIfNotExists(host);
 
             host.Run();
         }
@@ -29,7 +29,7 @@ namespace ASP_RazorContoso
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
-                    context.Database.EnsureCreated();
+                    //context.Database.EnsureCreated();
                     DbInitialiser.Initialize(context);
                 }
                 catch (Exception ex)
